@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 module AdminPanel
   class CollectionsController < ApplicationController
     before_action :authenticate_auth_user!
-    before_action :set_collection, only: [:show, :edit, :update, :destroy]
+    before_action :set_collection, only: %i[show edit update destroy]
 
     def index
       @collections = Collection.all
     end
 
-    def show
-    end
+    def show; end
 
     def new
       @collection = Collection.new
@@ -23,8 +24,7 @@ module AdminPanel
       end
     end
 
-    def edit
-    end
+    def edit; end
 
     def update
       if @collection.update(collection_params)

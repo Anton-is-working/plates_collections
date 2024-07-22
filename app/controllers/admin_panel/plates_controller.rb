@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AdminPanel
   class PlatesController < ApplicationController
     before_action :authenticate_auth_user!
@@ -7,15 +9,13 @@ module AdminPanel
       @plates = Plate.all
     end
 
-    def show
-    end
+    def show; end
 
     def new
       @plate = Plate.new
     end
 
-    def edit
-    end
+    def edit; end
 
     def create
       @plate = Plate.new(plate_params)

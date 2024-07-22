@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Plate < ApplicationRecord
   belongs_to :collection
   validates_presence_of :title
@@ -7,5 +9,4 @@ class Plate < ApplicationRecord
   def image_url
     Rails.application.routes.url_helpers.url_for(image.attachment) if image.attached?
   end
-  
 end

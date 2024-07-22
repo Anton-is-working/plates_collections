@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe AdminPanel::CollectionsController, type: :controller do
@@ -26,17 +28,17 @@ RSpec.describe AdminPanel::CollectionsController, type: :controller do
   describe 'POST #create' do
     context 'with valid attributes' do
       it 'creates a new collection' do
-        expect {
+        expect do
           post :create, params: { collection: valid_attributes }
-        }.to change(Collection, :count).by(1)
+        end.to change(Collection, :count).by(1)
       end
     end
 
     context 'with invalid attributes' do
       it 'does not create a new collection' do
-        expect {
+        expect do
           post :create, params: { collection: invalid_attributes }
-        }.to_not change(Collection, :count)
+        end.to_not change(Collection, :count)
       end
     end
   end
@@ -61,9 +63,9 @@ RSpec.describe AdminPanel::CollectionsController, type: :controller do
 
   describe 'DELETE #destroy' do
     it 'deletes the collection' do
-      expect {
+      expect do
         delete :destroy, params: { id: collection.id }
-      }.to change(Collection, :count).by(-1)
+      end.to change(Collection, :count).by(-1)
     end
   end
 end

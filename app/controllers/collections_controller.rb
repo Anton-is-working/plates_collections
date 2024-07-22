@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CollectionsController < ApplicationController
   before_action :set_collection, only: %i[show]
 
@@ -13,7 +15,6 @@ class CollectionsController < ApplicationController
 
   def set_collection
     @collection = Collection.includes(:plates).find_by(id: params[:id])
-    
   end
 
   def generate_cache_key(name)

@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class CollectionsController < BaseController
-      before_action :set_collection, only: [:show, :update, :destroy]
+      before_action :set_collection, only: %i[show update destroy]
 
       def index
         @collections = Collection.all
       end
 
-      def show
-      end
+      def show; end
 
       def create
         @collection = Collection.new(collection_params)

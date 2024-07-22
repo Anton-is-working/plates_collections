@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class PlatesController < BaseController
-      before_action :set_plate, only: [:show, :update, :destroy]
+      before_action :set_plate, only: %i[show update destroy]
 
       def index
         @plates = Plate.all
       end
 
-      def show
-      end
+      def show; end
 
       def create
         @plate = Plate.new(plate_params)

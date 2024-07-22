@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api
   class BaseController < ApplicationController
     before_action :authenticate_user!
@@ -5,12 +7,12 @@ module Api
     respond_to :json
 
     def authenticate_user!(*)
-      unless admin_signed_in?
-        respond_to do |format|
-          format.json do
-            render json: { success: false, message: 'You need to sign in or sign up before continuing.' },
-                   status: 401
-          end
+      return if admin_signed_in?
+
+      respond_to do |format|
+        format.json do
+          render json: { success: false, message: 'You need to sign in or sign up before continuing.' },
+                 status: 401
         end
       end
     end

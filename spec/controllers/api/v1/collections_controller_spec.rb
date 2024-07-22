@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Api::V1::CollectionsController, type: :controller do
@@ -27,18 +29,18 @@ RSpec.describe Api::V1::CollectionsController, type: :controller do
   describe 'POST #create' do
     context 'with valid attributes' do
       it 'creates a new collection' do
-        expect {
+        expect do
           post :create, params: { collection: valid_attributes }, format: :json
-        }.to change(Collection, :count).by(1)
+        end.to change(Collection, :count).by(1)
         expect(response).to have_http_status(:created)
       end
     end
 
     context 'with invalid attributes' do
       it 'does not create a new collection' do
-        expect {
+        expect do
           post :create, params: { collection: invalid_attributes }, format: :json
-        }.to_not change(Collection, :count)
+        end.to_not change(Collection, :count)
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
@@ -64,9 +66,9 @@ RSpec.describe Api::V1::CollectionsController, type: :controller do
 
   describe 'DELETE #destroy' do
     it 'deletes the collection' do
-      expect {
+      expect do
         delete :destroy, params: { id: collection.id }, format: :json
-      }.to change(Collection, :count).by(-1)
+      end.to change(Collection, :count).by(-1)
       expect(response).to have_http_status(:no_content)
     end
   end

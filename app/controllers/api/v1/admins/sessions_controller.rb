@@ -1,23 +1,34 @@
-class Api::V1::Admins::SessionsController < Devise::SessionsController
-  skip_before_action :verify_authenticity_token
-  respond_to :json
+# frozen_string_literal: true
 
-  def create
-    self.resource = warden.authenticate(auth_options)
-    return render json: { success: false, message: 'Invalid email or password.'},
-                  status: :unprocessable_entity unless resource
-    sign_in(resource_name, resource)
-    respond_with resource
-  end
+module Api
+  module V1
+    module Admins
+      class SessionsController < Devise::SessionsController
+        skip_before_action :verify_authenticity_token
+        respond_to :json
 
-  private
+        def create
+          self.resource = warden.authenticate(auth_options)
+          unless resource
+            return render json: { success: false, message: 'Invalid email or password.' },
+                          status: :unprocessable_entity
+          end
+          sign_in(resource_name, resource)
+          respond_with resource
+        end
 
-  def respond_with(resource, _opts = {})
-    return render json: { success: false, errors: resource.errors }, status: :unprocessable_entity if resource.errors.any?
-    render json: { success: true, message: 'Logged in successfully.', user: resource }
-  end
+        private
 
-  def respond_to_on_destroy
-    render json: { success: true, message: 'Successfully logged out.' }
+        def respond_with(resource, _opts = {})
+          return render json: { success: false, errors: resource.errors }, status: :unprocessable_entity if resource.errors.any?
+
+          render json: { success: true, message: 'Logged in successfully.', user: resource }
+        end
+
+        def respond_to_on_destroy
+          render json: { success: true, message: 'Successfully logged out.' }
+        end
+      end
+    end
   end
 end

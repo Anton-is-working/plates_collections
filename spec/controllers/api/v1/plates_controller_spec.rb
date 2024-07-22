@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Api::V1::PlatesController, type: :controller do
@@ -27,9 +29,9 @@ RSpec.describe Api::V1::PlatesController, type: :controller do
   describe 'POST #create' do
     context 'with invalid attributes' do
       it 'does not create a new plate' do
-        expect {
+        expect do
           post :create, params: { plate: invalid_attributes }, format: :json
-        }.to_not change(Plate, :count)
+        end.to_not change(Plate, :count)
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
@@ -55,9 +57,9 @@ RSpec.describe Api::V1::PlatesController, type: :controller do
 
   describe 'DELETE #destroy' do
     it 'deletes the plate' do
-      expect {
+      expect do
         delete :destroy, params: { id: plate.id }, format: :json
-      }.to change(Plate, :count).by(-1)
+      end.to change(Plate, :count).by(-1)
       expect(response).to have_http_status(:no_content)
     end
   end

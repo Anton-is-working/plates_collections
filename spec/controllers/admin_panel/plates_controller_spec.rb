@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe AdminPanel::PlatesController, type: :controller do
@@ -26,9 +28,9 @@ RSpec.describe AdminPanel::PlatesController, type: :controller do
   describe 'POST #create' do
     context 'with invalid attributes' do
       it 'does not create a new plate' do
-        expect {
+        expect do
           post :create, params: { plate: invalid_attributes }
-        }.to_not change(Plate, :count)
+        end.to_not change(Plate, :count)
       end
     end
   end
@@ -53,9 +55,9 @@ RSpec.describe AdminPanel::PlatesController, type: :controller do
 
   describe 'DELETE #destroy' do
     it 'deletes the plate' do
-      expect {
+      expect do
         delete :destroy, params: { id: plate.id }
-      }.to change(Plate, :count).by(-1)
+      end.to change(Plate, :count).by(-1)
     end
   end
 end
