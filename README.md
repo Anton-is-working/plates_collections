@@ -1,24 +1,21 @@
-# README
+1. **Встановіть Ruby 3.0.0**:
+  curl -sSL https://get.rvm.io | bash -s stable --ruby=3.0.0
+ source ~/.rvm/scripts/rvm
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+2. **Встановіть Rails**:
+  gem install rails -v 6.1.7
 
-Things you may want to cover:
+3. **Склонуйте проект**
 
-* Ruby version
+4. **Встановлення залежностей**:
+  bundle install
 
-* System dependencies
+5. **Налаштування бази даних**:
+  rails db:create
+  rails db:migrate
 
-* Configuration
+6. **Запуск сервера**:
+  rails s
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+7. **Запуск тестів**:
+  bundle exec rspec
