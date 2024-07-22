@@ -1,0 +1,54 @@
+<div class="container mt-4">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Admin Panel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <%= link_to 'Plates', admin_panel_plates_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Collections', admin_panel_collections_path, class: 'nav-link' %>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= button_to 'Logout', destroy_auth_admin_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1 class="my-4">Collections</h1>
+
+  <%= link_to 'New Collection', new_admin_panel_collection_path, class: 'btn btn-primary mb-3' %>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Published</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @collections.each do |collection| %>
+        <tr>
+          <td><%= collection.title %></td>
+          <td><%= truncate(collection.description, length: 100) %></td>
+          <td><%= collection.publish ? 'Yes' : 'No' %></td>
+          <td>
+            <%= link_to 'Show', admin_panel_collection_path(collection), class: 'btn btn-info btn-sm' %>
+            <%= link_to 'Edit', edit_admin_panel_collection_path(collection), class: 'btn btn-warning btn-sm' %>
+            <%= button_to 'Delete', admin_panel_collection_path(collection), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

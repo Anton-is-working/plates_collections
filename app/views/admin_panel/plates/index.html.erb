@@ -1,0 +1,54 @@
+<div class="container mt-4">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Admin Panel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <%= link_to 'Plates', admin_panel_plates_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Collections', admin_panel_collections_path, class: 'nav-link' %>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= button_to 'Logout', destroy_auth_admin_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1>Plates</h1>
+
+  <%= link_to 'New Plate', new_admin_panel_plate_path, class: 'btn btn-primary mb-3' %>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Order</th>
+        <th>Collection</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @plates.each do |plate| %>
+        <tr>
+          <td><%= plate.title %></td>
+          <td><%= plate.order %></td>
+          <td><%= plate.collection&.title %></td>
+          <td>
+            <%= link_to 'Show', admin_panel_plate_path(plate), class: 'btn btn-info btn-sm' %>
+            <%= link_to 'Edit', edit_admin_panel_plate_path(plate), class: 'btn btn-warning btn-sm' %>
+            <%= button_to "Delete", admin_panel_plate_path(plate), method: :delete, class: 'btn btn-danger btn-sm' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

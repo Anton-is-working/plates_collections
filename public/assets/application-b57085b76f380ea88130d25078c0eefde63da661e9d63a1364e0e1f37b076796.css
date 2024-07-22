@@ -1,0 +1,266 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+.container--0- {
+    position: absolute;
+    left: -625px;
+    top: 2479px;
+    width: 1250px;
+    height: 2058px;
+    background-color: #f0f0f0;
+    justify-content: start;
+    align-items: start;
+}
+
+.text-1-2-1 {
+    position: absolute;
+    left: 40px;
+    top: 837px;
+    width: 412px;
+    height: 290px;
+    color: #262626;
+    font-size: 14px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-1-2-4 {
+    position: absolute;
+    left: 103px;
+    top: 31px;
+    width: 145px;
+    height: 20px;
+    color: #262626;
+    font-size: 12px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-1-2-0 {
+    position: absolute;
+    left: 40px;
+    top: 772px;
+    width: 289px;
+    height: 35px;
+    color: #262626;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000000;
+    box-shadow: 0px 4px 4px 0 #000000;
+    font-size: 35px;
+    font-family: Muller, "UltraLight";
+    font-weight: 100;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-2-3-0 {
+    position: absolute;
+    left: 40px;
+    top: 1675px;
+    width: 577px;
+    height: 40px;
+    color: #ffffff;
+    font-size: 35px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-2-3-1 {
+    position: absolute;
+    left: 152px;
+    top: 1745px;
+    width: 519px;
+    height: 96px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-2-3-2 {
+    position: absolute;
+    left: 905px;
+    top: 992px;
+    width: 75px;
+    height: 12px;
+    color: #262626;
+    font-size: 12px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-2-3-3 {
+    position: absolute;
+    left: 1068px;
+    top: 992px;
+    width: 80px;
+    height: 12px;
+    color: #262626;
+    font-size: 12px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-2-3-8 {
+    position: absolute;
+    left: 575px;
+    top: 1189px;
+    width: 70px;
+    height: 12px;
+    color: #262626;
+    font-size: 12px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-2-3-9 {
+    position: absolute;
+    left: 740px;
+    top: 1189px;
+    width: 130px;
+    height: 12px;
+    color: #262626;
+    font-size: 12px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-2-3-10 {
+    position: absolute;
+    left: 905px;
+    top: 1189px;
+    width: 125px;
+    height: 12px;
+    color: #262626;
+    font-size: 12px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-2-3-11 {
+    position: absolute;
+    left: 1070px;
+    top: 1189px;
+    width: 137px;
+    height: 12px;
+    color: #262626;
+    font-size: 12px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-2-3-16 {
+    position: absolute;
+    left: 575px;
+    top: 1386px;
+    width: 131px;
+    height: 12px;
+    color: #262626;
+    font-size: 12px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-2-3-17 {
+    position: absolute;
+    left: 740px;
+    top: 1386px;
+    width: 126px;
+    height: 12px;
+    color: #262626;
+    font-size: 12px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-2-3-18 {
+    position: absolute;
+    left: 905px;
+    top: 1386px;
+    width: 123px;
+    height: 12px;
+    color: #262626;
+    font-size: 12px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-2-3-19 {
+    position: absolute;
+    left: 1070px;
+    top: 1386px;
+    width: 115px;
+    height: 12px;
+    color: #262626;
+    font-size: 12px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-3-4-0 {
+    position: absolute;
+    left: 812.0000014305115px;
+    top: 1799px;
+    width: 298px;
+    height: 34px;
+    font-size: 14px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}
+
+.text-3-4-1 {
+    position: absolute;
+    left: 836px;
+    top: 1758px;
+    width: 176px;
+    height: 15px;
+    color: #262626;
+    font-size: 15px;
+    font-family: Muller, "Light";
+    font-weight: 300;
+    text-align: left;
+    vertical-align: top;
+}

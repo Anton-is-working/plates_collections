@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h1 class="my-4">Collections</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @collections.each do |collection| %>
+        <tr>
+          <td><%= collection.title %></td>
+          <td><%= truncate(collection.description, length: 100) %></td>
+          <td>
+            <%= link_to 'Show', collection_path(collection), class: 'btn btn-info btn-sm' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

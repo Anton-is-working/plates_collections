@@ -1,0 +1,121 @@
+<div class="wrapper">
+  <div class="collection__header">
+    <div class="collection__header-big">
+      <%= button_to root_path, method: :get, class: 'collection__header-text' do %>
+        <%= image_tag 'Menu.svg', alt: 'Image' %>
+        назад к коллекциям
+      <% end %>
+    </div>
+    <div class="collection__header-small">
+      <%= button_to root_path, method: :get, class: 'collection__header-text-small' do %>
+        <%= image_tag 'Menu.svg', alt: 'Image' %>
+      <% end %>
+    </div>
+    <div class="collection__header-logo">
+      <%= image_tag 'Logo.svg', alt: 'Image', class:'collection__header--hexa' %>
+    </div>
+    <p class="collection__header-text">
+      <span>tel-380977507277</span>
+    </p>
+    <p class="collection__header-text-small">
+      <span>Inst fb</span>
+    </p>
+  </div>
+
+  <div class="swiper">
+  <div class="swiper-wrapper">
+    <% if @collection.images.present? %>
+      <% @collection.images.each do |image| %>
+        <%= image_tag image, alt: 'logo', class:'swiper-slide' %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<div class="swiper-pagination"></div>
+
+
+  <div class="collection__block-info">
+    <div class="collection__block-info-column-first">
+      <div class="collection__title">
+        <%= @collection.title %>
+      </div>
+
+      <div class="collection__title-row">
+        <div class="collection__title-small">
+          <%= @collection.title %>
+        </div>
+
+        <%= image_tag 'logo_1.svg', alt: 'logo', class:'collection__logo-small-small' %>
+      </div>
+
+      <div class="collection__description">
+        <%= @collection.description %>
+      </div>
+
+      <div class="collection__description">
+        <%= image_tag 'video.svg', alt: 'video', class:'collection__video' %>
+      </div>
+    </div>
+
+    <div class="collection__block-info-column-second">
+      <%= image_tag 'logo_1.svg', alt: 'logo', class:'collection__logo-small' %>
+
+      <div class="collection__grid">
+        <% @collection.plates.each do |plate| %>
+          <div class="collection__grid-element">
+            <% if plate.image.present? %>
+              <%= image_tag plate.image, alt: 'logo', class:'collection__grid-image' %>
+            <% end %>
+            <div class="collection__grid-element-text">
+              <%= plate.title %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <%= link_to new_invoice_path(collection_id: @collection.id), class: 'collection__button' do %>
+        <button class="collection__button">
+          <div class="collection__button-text">
+            узнать цену
+          </div>
+        </button>
+      <% end %>
+    </div>
+  </div>
+  <div class="collection__block-third">
+    <div class="collection__block-third-column-first">
+      <div class="collection__block-third-title">
+        лучше увидеть в живую
+      </div>
+      <div class="collection__block-third-text">
+        Мы создали для вас место, где представлены более 250 коллекций плитки, камня, сантехники и мебели от премиальных брендов. С целью комфорта за вами будет закреплён личный менеджер. По запросу также предоставляем услуги дизайнера. В шоу-руме функционирует зона отдыха. 
+      </div>
+    </div>
+
+    <div class="collection__block-third-column-second">
+      <button class="collection__button-block-third">
+        <div class="collection__button-text-block-third">
+          посетить шоу-рум
+        </div>
+      </button>
+      <div class="collection__block-third-border-box">
+        <div class="collection__block-third-text-border">
+          Территория закрытого доступа, посещение по предварительной записи.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collection__block-links">
+    <div class="collection__block-links-text">
+      Instagram
+    </div>
+    <div class="collection__block-links-text">
+      facebook
+    </div>
+  </div>
+</div>

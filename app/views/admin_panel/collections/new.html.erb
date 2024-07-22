@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <h2>New Collection</h2>
+
+  <%= form_with model: @collection, url: admin_panel_collections_path, local: true, class: 'needs-validation' do |form| %>
+    <% if @collection.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <h4><%= pluralize(@collection.errors.count, "error") %> prohibited this collection from being saved:</h4>
+        <ul>
+          <% @collection.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :title, class: 'form-label' %>
+      <%= form.text_field :title, class: 'form-control', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :description, class: 'form-label' %>
+      <%= form.text_area :description, class: 'form-control' %>
+    </div>
+
+    <div class="form-check mb-3">
+      <%= form.label :publish, class: 'form-check-label' %>
+      <%= form.check_box :publish, class: 'form-check-input' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :images, class: 'form-label' %>
+      <%= form.file_field :images, multiple: true, class: 'form-control-file' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit 'Create Collection', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+  <%= link_to 'Back', admin_panel_collections_path, class: 'btn btn-secondary' %>
+</div>
