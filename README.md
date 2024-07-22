@@ -19,3 +19,7 @@
 
 7. **Запуск тестів**:
   bundle exec rspec
+
+8. **Рути до адмін панелі**:
+  /admin_panel/plates
+  /admin_panel/collections
